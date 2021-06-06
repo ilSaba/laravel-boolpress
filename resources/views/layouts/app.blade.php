@@ -70,6 +70,7 @@
                     </ul>
                 </div>
             </div>
+            <a href="{{ route('admin.categories.index') }}">Categorie</a>
         </nav>
 
         <main class="py-4">

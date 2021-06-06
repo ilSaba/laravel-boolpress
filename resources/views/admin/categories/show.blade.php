@@ -80,13 +80,14 @@
             @endif
 
             <div class="content">
-                {{$post->title}}
-                {{$post->content}}
-                <a href="{{ route('category.index', ['slug' => $post->category->slug]) }}">{{$post->category->name}}</a>
-
+                {{$category->name}}
+                {{$category->content}}
+                @if ($category->category)
+                <a href="{{ route('category.index', ['slug' => $category->category->slug]) }}">{{$category->category->name}}</a>
+                @endif
             </div>
             <div>
-                <a href="{{ route('posts.index') }}">Go Back</a>
+                <a href="{{ route('admin.categories.index') }}">Go Back</a>
             </div>
         </div>
     </body>

@@ -82,11 +82,13 @@
             <div class="content">
                 {{$post->title}}
                 {{$post->content}}
+                @if ($post->category)
                 <a href="{{ route('category.index', ['slug' => $post->category->slug]) }}">{{$post->category->name}}</a>
-
+                @endif
+                <img src="{{ asset($post->cover) }}" alt="{{ $post->title }}">
             </div>
             <div>
-                <a href="{{ route('posts.index') }}">Go Back</a>
+                <a href="{{ route('admin.index') }}">Go Back</a>
             </div>
         </div>
     </body>
